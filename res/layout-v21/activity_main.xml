@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/mainAppLayout">
+
+    <RelativeLayout
+        android:id="@+id/findGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:elevation="999dp"
+        android:gravity="center_vertical"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/editTextFind"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:hint="@string/find"
+            android:layout_margin="10dip"
+            android:layout_toStartOf="@+id/imageButtonFind"
+            android:background="@drawable/layout_edit_bg"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorLink="#FFFFFF"
+            tools:ignore="LabelFor, TextFields" />
+
+        <ImageButton
+            android:id="@+id/imageButtonFind"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            android:layout_toStartOf="@+id/imageButtonClose"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/close_button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_search"
+            android:tint="@color/colorPrimaryDark"
+            tools:ignore="RelativeOverlap"
+            android:onClick="findNext" />
+
+        <ImageButton
+            android:id="@+id/imageButtonClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dip"
+            android:layout_marginEnd="10dip"
+            android:layout_marginBottom="10dip"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/close_button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close_white"
+            android:tint="@color/colorPrimaryDark"
+            tools:ignore="RelativeOverlap"
+            android:onClick="closeFind" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorAccent"
+            app:tabTextColor="@color/colorPrimaryDark" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ru.limedev.mtacse.core.pojo.CustomViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

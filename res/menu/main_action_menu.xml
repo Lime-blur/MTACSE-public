@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:id="@+id/moreVertical"
+            android:icon="@drawable/ic_more"
+            android:title="@string/action_settings"
+            app:showAsAction="ifRoom">
+                <menu>
+                        <group android:id="@+id/menuMainGroup">
+                                <item android:id="@+id/aboutApp"
+                                    android:title="@string/about_title" />
+                                <item android:id="@+id/menuSettings"
+                                    android:title="@string/tools_title" />
+                                <item android:id="@+id/clearCache"
+                                    android:title="@string/clear_cache" />
+                        </group>
+                        <group android:id="@+id/menuCodeGroup"
+                            android:visible="false">
+                                <item android:id="@+id/menuFind"
+                                    android:title="@string/find" />
+                        </group>
+                </menu>
+        </item>
+</menu>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/mainButtonsGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F4F4F4"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/openFileButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/buttons_main"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_folder_open"
+                app:tint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/open_file"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/compileButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/openFileButton"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/buttons_main"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_lock"
+                app:tint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/compile_files"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zipButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/compileButton"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/buttons_main"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_zip"
+                app:tint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/zip_files"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/filesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mainButtonsGroup"
+        android:divider="@null"
+        android:layout_marginBottom="50dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/filesImageBackgroundGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@id/mainButtonsGroup">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp">
+
+            <ImageView
+                android:id="@+id/filesImageBackground"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/background_image"
+                app:srcCompat="@drawable/ic_description"
+                app:tint="#DCDCDC" />
+
+            <TextView
+                android:id="@+id/filesImageBackgroundInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/filesImageBackground"
+                android:text="@string/opened_files_shows_here"
+                android:textColor="#ACACAC"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/mainProgressBarBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:visibility="gone"
+        android:elevation="999dp">
+
+        <RelativeLayout
+            android:id="@+id/mainProgressBarGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/layout_white_bg"
+            android:padding="15dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false">
+
+            <ProgressBar
+                android:id="@+id/mainProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/progressBarBlue"/>
+
+            <TextView
+                android:id="@+id/loadingInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/mainProgressBar"
+                android:fontFamily="sans-serif-medium"
+                android:maxWidth="250dp"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/showImageBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:visibility="gone"
+        android:elevation="999dp">
+
+        <ImageView
+            android:id="@+id/viewShowsImageClose"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_above="@id/showImageGroup"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/shows_image"
+            android:src="@drawable/ic_close_white"
+            android:layout_marginBottom="15dp" />
+
+        <RelativeLayout
+            android:id="@+id/showImageGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/layout_white_bg"
+            android:backgroundTint="#8DD5D5D5"
+            android:padding="5dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="false">
+
+            <ImageView
+                android:id="@+id/viewShowsImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/shows_image"
+                android:maxWidth="200dp"
+                android:maxHeight="200dp"
+                android:adjustViewBounds="true" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

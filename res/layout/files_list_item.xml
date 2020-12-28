@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/fileNameItem"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:layout_toStartOf="@+id/fileTypeItem"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:singleLine="true"
+        android:textColor="#4C4C4C"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/fileTypeItem"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:singleLine="true"
+        android:textColor="#A3A3A3"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/filePathItem"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@id/fileNameItem"
+        android:layout_toStartOf="@+id/fileSizeItem"
+        android:fontFamily="sans-serif-light"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:singleLine="true"
+        android:textColor="#A3A3A3"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/fileSizeItem"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/fileNameItem"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:singleLine="true"
+        android:textColor="#A3A3A3"
+        android:textSize="12sp" />
+
+</RelativeLayout>

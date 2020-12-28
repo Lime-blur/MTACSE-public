@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <ru.limedev.mtacse.core.pojo.TextEditor
+        android:id="@+id/editCodeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:background="#EBEBEB"
+        android:scrollbars="vertical" />
+
+    <ImageButton
+        android:id="@+id/imageButtonClose"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/imageButtonSave"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/close_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_close_white"
+        android:tint="@color/colorAccent"
+        tools:ignore="RelativeOverlap" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSave"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/imageButtonRedo"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/save_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_save_white"
+        android:tint="@color/colorAccent"
+        tools:ignore="RelativeOverlap" />
+
+    <ImageButton
+        android:id="@+id/imageButtonRedo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toStartOf="@id/imageButtonUndo"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/redo_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_redo"
+        android:tint="@color/colorAccent"
+        tools:ignore="RelativeOverlap" />
+
+    <ImageButton
+        android:id="@+id/imageButtonUndo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/undo_button"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_undo"
+        android:tint="@color/colorAccent"
+        tools:ignore="RelativeOverlap" />
+
+    <ru.limedev.mtacse.core.pojo.CustomSpinner
+        android:id="@+id/chooseSyntaxSpinner"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:spinnerMode="dialog" />
+
+</RelativeLayout>

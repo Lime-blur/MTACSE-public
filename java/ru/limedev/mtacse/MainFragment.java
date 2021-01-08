@@ -300,8 +300,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
 
     private void zipFilesMain() {
-        updateLoading(false);
         if (unzippedFilesPath != null && docsPath != null && new File(unzippedFilesPath).exists()) {
+            updateLoading(false);
             CompositeDisposable disposables = new CompositeDisposable();
             disposables.add(zipProcess()
                     .subscribeOn(Schedulers.io())
@@ -352,7 +352,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                     openFileOrArchive();
                     break;
                 case R.id.compileButton:
-                    if (getActivity() != null) {
+                    if (getActivity() != null && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                         if (isNetworkAvailable(getActivity())) {
                             if (unzippedFilesPath != null && new File(unzippedFilesPath).exists()) {
                                 obfuscateProcess();
@@ -364,6 +364,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         } else {
                             showToast(getTranslated(R.string.no_internet_connection), false);
                         }
+                    } else {
+                        showToast(getTranslated(R.string.error_compile), false);
                     }
                     break;
                 case R.id.zipButton:

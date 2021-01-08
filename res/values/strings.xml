@@ -56,6 +56,7 @@
     <string name="sound">Sound</string>
     <string name="code">Code</string>
     <string name="unknown_format">\u003F</string>
+    <string name="error_compile">Encryption error! Maybe, your Android version can not support this encryption.</string>
 
     <array name="syntax_array">
         <item>Script (.lua)</item>
